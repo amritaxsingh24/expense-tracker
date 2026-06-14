@@ -1,0 +1,9 @@
+@media (max-width: 480px) {
+  .totals {
+    flex-direction: column;
+  }
+
+  .container {
+    padding: 15px;
+  }
+}
