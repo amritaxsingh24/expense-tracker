@@ -6,11 +6,16 @@
 }
 
 body {
-  background: #f4f4f4;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 20px;
 }
 
 .container {
+  width: 100%;
   max-width: 600px;
   margin: 0 auto;
   background: #fff;
@@ -21,9 +26,12 @@ body {
 
 h1 {
   text-align: center;
-  margin-bottom: 20px;
+  font-size: 28px;
+  color: #2c3e50;
+  margin-bottom: 25px;
 }
 
+/* Totals section */
 .totals {
   display: flex;
   gap: 10px;
@@ -33,15 +41,33 @@ h1 {
 .total-box {
   flex: 1;
   text-align: center;
-  padding: 15px;
+  padding: 20px 15px;
   border-radius: 6px;
   color: #fff;
+  transition: transform 0.2s;
+}
+
+.total-box:hover {
+  transform: translateY(-3px);
+}
+
+.total-box h3 {
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.9;
+  margin-bottom: 5px;
+}
+
+.total-box p {
+  font-size: 22px;
+  font-weight: 700;
 }
 
 .income { background: #2ecc71; }
 .expense { background: #e74c3c; }
 .balance { background: #3498db; }
 
+/* Form */
 #transaction-form {
   display: flex;
   flex-direction: column;
@@ -55,18 +81,28 @@ h1 {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 14px;
+  font-size: 15px;
+}
+
+#transaction-form input:focus,
+#transaction-form select:focus {
+  outline: none;
+  border-color: #667eea;
 }
 
 #transaction-form button {
-  background: #3498db;
+  background: #667eea;
   color: #fff;
   border: none;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 12px;
   cursor: pointer;
+  transition: background 0.2s;
 }
 
 #transaction-form button:hover {
-  background: #2980b9;
+  background: #5568d3;
 }
 
 .error {
@@ -74,6 +110,7 @@ h1 {
   font-size: 13px;
 }
 
+/* Transaction list */
 #transaction-list {
   list-style: none;
 }
@@ -82,8 +119,10 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  border-bottom: 1px solid #eee;
+  padding: 12px 15px;
+  margin-bottom: 6px;
+  border-radius: 6px;
+  background: #f9f9f9;
 }
 
 #transaction-list li.income-item {
