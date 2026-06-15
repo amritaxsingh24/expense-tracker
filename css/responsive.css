@@ -1,3 +1,4 @@
+/* Mobile (320px - 480px) */
 @media (max-width: 480px) {
   .totals {
     flex-direction: column;
@@ -5,5 +6,46 @@
 
   .container {
     padding: 15px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .navbar {
+    padding: 14px 16px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  #transaction-list li {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .txn-amount {
+    margin-right: 0;
+  }
+}
+
+/* Tablet (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  .totals {
+    flex-wrap: wrap;
+  }
+
+  .total-box {
+    flex: 1 1 45%;
   }
 }

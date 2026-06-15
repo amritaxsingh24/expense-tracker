@@ -8,36 +8,81 @@
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
+  <header class="navbar">
+    <div class="logo">💰 ExpenseTracker</div>
+  </header>
+
   <div class="container">
-    <h1>Expense Tracker</h1>
+    <h1>Dashboard</h1>
+    <p class="subtitle">Track your income and expenses easily</p>
 
     <div class="totals">
       <div class="total-box income">
+        <span class="icon">⬆</span>
         <h3>Income</h3>
         <p id="total-income">₹0</p>
       </div>
       <div class="total-box expense">
+        <span class="icon">⬇</span>
         <h3>Expense</h3>
         <p id="total-expense">₹0</p>
       </div>
       <div class="total-box balance">
+        <span class="icon">⚖</span>
         <h3>Balance</h3>
         <p id="total-balance">₹0</p>
       </div>
     </div>
 
-    <form id="transaction-form">
-      <input type="text" id="description" placeholder="Description" required>
-      <input type="number" id="amount" placeholder="Amount" required>
-      <select id="type">
-        <option value="income">Income</option>
-        <option value="expense">Expense</option>
-      </select>
-      <button type="submit">Add</button>
-      <p id="error-message" class="error"></p>
-    </form>
+    <div class="form-card">
+      <h2>Add Transaction</h2>
+      <form id="transaction-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" id="description" placeholder="e.g. Salary, Rent, Groceries" required>
+          </div>
+          <div class="form-group">
+            <label for="type">Type</label>
+            <select id="type">
+              <option value="income">Income</option>
+              <option value="expense">Expense</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="amount">Amount (₹)</label>
+            <input type="number" id="amount" placeholder="0.00" required>
+          </div>
+          <div class="form-group">
+            <label for="date">Date</label>
+            <input type="date" id="date" required>
+          </div>
+        </div>
+        <button type="submit">Add Transaction</button>
+        <p id="error-message" class="error"></p>
+      </form>
+    </div>
 
-    <ul id="transaction-list"></ul>
+    <div class="list-card">
+      <h2>Recent Transactions</h2>
+      <div class="list-controls">
+        <input type="text" id="search-input" placeholder="Search transactions...">
+        <select id="filter-select">
+          <option value="all">All</option>
+          <option value="income">Income</option>
+          <option value="expense">Expense</option>
+        </select>
+        <select id="sort-select">
+          <option value="date-desc">Newest First</option>
+          <option value="date-asc">Oldest First</option>
+          <option value="amount-desc">Amount: High to Low</option>
+          <option value="amount-asc">Amount: Low to High</option>
+        </select>
+      </div>
+      <ul id="transaction-list"></ul>
+    </div>
   </div>
 
   <script type="module" src="js/app.js"></script>

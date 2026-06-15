@@ -8,12 +8,13 @@ function generateId() {
   return Date.now().toString();
 }
 
-export function addTransaction(description, amount, type) {
+export function addTransaction(description, amount, type, date) {
   const newTransaction = {
     id: generateId(),
     description,
     amount: Number(amount),
-    type
+    type,
+    date
   };
 
   transactions.push(newTransaction);
